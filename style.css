@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  /* ou column */
+  justify-content: center;
+  /* alignement sur l'axe principal */
+  align-items: center;
+  /* alignement sur l'axe secondaire */
+  flex-wrap: wrap;
+  /* retour à la ligne si nécessaire */
+  gap: 20px;
+  /* espacement entre éléments */
+
+  /* Pour la visualisation */
+  background-color: #f0f0f0;
+  padding: 20px;
+  min-height: 300px;
+}
+
+.item {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
