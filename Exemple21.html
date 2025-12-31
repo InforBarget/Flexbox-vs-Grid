@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription complexe</title>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Créer un compte</h2>
+        <p class="form-subtitle">Rejoignez notre communauté en quelques étapes</p>
+
+        <!-- Indicateur de progression -->
+        <div class="progress-indicator">
+            <div class="progress-step completed">
+                <div class="progress-number">1</div>
+                <span class="progress-label">Infos</span>
+            </div>
+            <div class="progress-step active">
+                <div class="progress-number">2</div>
+                <span class="progress-label">Adresse</span>
+            </div>
+            <div class="progress-step">
+                <div class="progress-number">3</div>
+                <span class="progress-label">Sécurité</span>
+            </div>
+        </div>
+
+        <!-- Structure du formulaire avec Grid (Niveau 1) -->
+        <form class="complex-form">
+            <!-- Section 1 : Informations personnelles -->
+            <div class="form-section">
+                <h3>Informations personnelles</h3>
+
+                <div class="field-group field-full">
+                    <label for="username">
+                        Nom d'utilisateur <span class="required">*</span>
+                    </label>
+                    <input type="text" id="username" placeholder="john_doe" required pattern="[a-zA-Z0-9_]{3,20}">
+                    <span class="field-hint">3 à 20 caractères, lettres, chiffres et underscore uniquement</span>
+                </div>
+
+                <!-- Flexbox pour les champs côte à côte (Niveau 2) -->
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="firstname">
+                            Prénom <span class="required">*</span>
+                        </label>
+                        <input type="text" id="firstname" placeholder="John" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="lastname">
+                            Nom <span class="required">*</span>
+                        </label>
+                        <input type="text" id="lastname" placeholder="Doe" required>
+                    </div>
+                </div>
+
+                <div class="field-group field-full">
+                    <label for="email">
+                        Email <span class="required">*</span>
+                    </label>
+                    <input type="email" id="email" placeholder="john.doe@example.com" required>
+                </div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" placeholder="+33 6 12 34 56 78" pattern="[+]?[0-9\s]+">
+                    </div>
+
+                    <div class="field-group">
+                        <label for="birthdate">Date de naissance</label>
+                        <input type="date" id="birthdate">
+                    </div>
+                </div>
+
+                <div class="field-group field-full">
+                    <label>Genre</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="homme">
+                            <span>Homme</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="femme">
+                            <span>Femme</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="autre">
+                            <span>Autre</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="non-specifie" checked>
+                            <span>Préfère ne pas dire</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2 : Adresse -->
+            <div class="form-section">
+                <h3>Adresse</h3>
+
+                <div class="field-group field-full">
+                    <label for="address">
+                        Rue <span class="required">*</span>
+                    </label>
+                    <input type="text" id="address" placeholder="123 Rue de la Paix" required>
+                </div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="city">
+                            Ville <span class="required">*</span>
+                        </label>
+                        <input type="text" id="city" placeholder="Paris" required>
+                    </div>
+
+                    <div class="field-group field-small">
+                        <label for="zipcode">
+                            Code postal <span class="required">*</span>
+                        </label>
+                        <input type="text" id="zipcode" placeholder="75001" required pattern="[0-9]{5}">
+                    </div>
+                </div>
+
+                <div class="field-group field-full">
+                    <label for="country">
+                        Pays <span class="required">*</span>
+                    </label>
+                    <select id="country" required>
+                        <option value="">Sélectionnez un pays</option>
+                        <option value="fr">France</option>
+                        <option value="be">Belgique</option>
+                        <option value="ch">Suisse</option>
+                        <option value="ca">Canada</option>
+                        <option value="lu">Luxembourg</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Section 3 : Sécurité -->
+            <div class="form-section">
+                <h3>Sécurité</h3>
+
+                <div class="field-group field-full">
+                    <label for="password">
+                        Mot de passe <span class="required">*</span>
+                    </label>
+                    <input type="password" id="password" placeholder="••••••••" required minlength="8">
+                    <span class="field-hint">Minimum 8 caractères, incluant majuscules, minuscules et chiffres</span>
+                </div>
+
+                <div class="field-group field-full">
+                    <label for="confirm-password">
+                        Confirmer le mot de passe <span class="required">*</span>
+                    </label>
+                    <input type="password" id="confirm-password" placeholder="••••••••" required minlength="8">
+                </div>
+
+                <div class="field-group field-full">
+                    <label for="security-question">Question de sécurité</label>
+                    <select id="security-question">
+                        <option value="">Choisir une question</option>
+                        <option value="pet">Nom de votre premier animal ?</option>
+                        <option value="city">Ville de naissance ?</option>
+                        <option value="school">Nom de votre école primaire ?</option>
+                        <option value="book">Livre préféré ?</option>
+                    </select>
+                </div>
+
+                <div class="field-group field-full">
+                    <label for="security-answer">Réponse</label>
+                    <input type="text" id="security-answer" placeholder="Votre réponse">
+                </div>
+            </div>
+
+            <!-- Section 4 : Préférences et consentements -->
+            <div class="form-section">
+                <h3>Préférences</h3>
+
+                <div class="field-group field-full">
+                    <label for="bio">Bio / Présentation</label>
+                    <textarea id="bio" placeholder="Parlez-nous un peu de vous..." maxlength="500"></textarea>
+                    <span class="field-hint">Maximum 500 caractères</span>
+                </div>
+
+                <div class="field-group field-full">
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span>J'accepte les conditions d'utilisation <span class="required">*</span></span>
+                        </label>
+
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span>J'accepte la politique de confidentialité <span class="required">*</span></span>
+                        </label>
+
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>Je souhaite recevoir la newsletter hebdomadaire</span>
+                        </label>
+
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>Je souhaite recevoir des offres promotionnelles</span>
+                        </label>
+
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>J'accepte d'être contacté par téléphone</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boutons avec Flexbox (Niveau 3) -->
+            <div class="form-actions">
+                <button type="button" class="btn-secondary">Annuler</button>
+                <button type="submit" class="btn-primary">Créer mon compte</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
