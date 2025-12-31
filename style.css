@@ -1,0 +1,39 @@
+.responsive-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.sidebar-mobile,
+.content-mobile,
+.ads-mobile {
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+/* Sur grand écran : changer l'ordre visuel */
+@media (min-width: 768px) {
+  .responsive-layout {
+    flex-direction: row;
+  }
+
+  .content-mobile {
+    order: 2;
+    /* milieu */
+    flex: 2;
+  }
+
+  .sidebar-mobile {
+    order: 1;
+    /* gauche */
+    flex: 1;
+  }
+
+  .ads-mobile {
+    order: 3;
+    /* droite */
+    flex: 1;
+  }
+}
