@@ -1,0 +1,15 @@
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  text-align: center;
+}
