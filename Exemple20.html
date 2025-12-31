@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Responsive</title>
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <!-- Header avec Flexbox (Niveau 2) -->
+        <header class="dashboard-header">
+            <h1>Dashboard</h1>
+            <div class="header-actions">
+                <button class="btn-icon" title="Notifications">🔔</button>
+                <div class="user-profile">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%233498db'/%3E%3Ctext x='20' y='26' font-size='16' fill='white' text-anchor='middle' font-family='Arial'%3EA%3C/text%3E%3C/svg%3E"
+                        alt="Avatar">
+                    <span>Anthony</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar avec Flexbox (Niveau 3) -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">Dashboard Pro</div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <span class="nav-item-icon">📊</span>
+                    <span>Tableau de bord</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-item-icon">📈</span>
+                    <span>Statistiques</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-item-icon">👥</span>
+                    <span>Utilisateurs</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-item-icon">📦</span>
+                    <span>Produits</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-item-icon">💰</span>
+                    <span>Ventes</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-item-icon">📧</span>
+                    <span>Messages</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-item-icon">⚙️</span>
+                    <span>Paramètres</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#">Aide & Support</a>
+                <a href="#">Documentation</a>
+            </div>
+        </aside>
+
+        <!-- Zone des widgets avec Grid (Niveau 4) -->
+        <main class="widgets-area">
+            <!-- Widget 1 : Ventes (Niveau 5 : Flexbox pour le contenu) -->
+            <div class="widget widget-sales">
+                <div class="widget-header">
+                    <h3>Ventes du mois</h3>
+                    <span class="widget-trend up">12%</span>
+                </div>
+                <div class="widget-value">45,230€</div>
+                <div class="widget-chart">Graphique des ventes</div>
+                <div class="widget-info">Par rapport au mois dernier</div>
+            </div>
+
+            <!-- Widget 2 : Utilisateurs -->
+            <div class="widget widget-users">
+                <div class="widget-header">
+                    <h3>Nouveaux utilisateurs</h3>
+                    <span class="widget-trend up">8%</span>
+                </div>
+                <div class="widget-value">1,234</div>
+                <div class="widget-info">Cette semaine</div>
+            </div>
+
+            <!-- Widget 3 : Commandes -->
+            <div class="widget widget-orders">
+                <div class="widget-header">
+                    <h3>Commandes</h3>
+                    <span class="widget-trend down">3%</span>
+                </div>
+                <div class="widget-value">156</div>
+                <div class="widget-info">Aujourd'hui</div>
+            </div>
+
+            <!-- Widget 4 : Activité récente (span 2 colonnes) -->
+            <div class="widget widget-activity">
+                <div class="widget-header">
+                    <h3>Activité récente</h3>
+                </div>
+                <ul class="activity-list">
+                    <li>
+                        <span class="activity-icon">✅</span>
+                        <div class="activity-content">
+                            <p class="activity-text">Nouvelle commande #1234 de Jean Dupont</p>
+                            <span class="activity-time">Il y a 5 minutes</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="activity-icon">👤</span>
+                        <div class="activity-content">
+                            <p class="activity-text">Nouvel utilisateur inscrit : Marie Martin</p>
+                            <span class="activity-time">Il y a 12 minutes</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="activity-icon">💰</span>
+                        <div class="activity-content">
+                            <p class="activity-text">Paiement reçu : 450€</p>
+                            <span class="activity-time">Il y a 1 heure</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="activity-icon">📦</span>
+                        <div class="activity-content">
+                            <p class="activity-text">Produit mis en ligne : "Formation CSS Avancé"</p>
+                            <span class="activity-time">Il y a 2 heures</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Widget 5 : Tâches -->
+            <div class="widget widget-tasks">
+                <div class="widget-header">
+                    <h3>Tâches en cours</h3>
+                </div>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <input type="checkbox" id="task1">
+                        <label for="task1">Mettre à jour le catalogue produits</label>
+                    </li>
+                    <li class="task-item">
+                        <input type="checkbox" id="task2" checked>
+                        <label for="task2">Répondre aux emails clients</label>
+                    </li>
+                    <li class="task-item">
+                        <input type="checkbox" id="task3">
+                        <label for="task3">Préparer le rapport mensuel</label>
+                    </li>
+                    <li class="task-item">
+                        <input type="checkbox" id="task4">
+                        <label for="task4">Planifier la réunion d'équipe</label>
+                    </li>
+                    <li class="task-item">
+                        <input type="checkbox" id="task5">
+                        <label for="task5">Optimiser les performances du site</label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Widget 6 : Revenu -->
+            <div class="widget widget-revenue">
+                <div class="widget-header">
+                    <h3>Revenu annuel</h3>
+                    <span class="widget-trend up">15%</span>
+                </div>
+                <div class="widget-value">234,500€</div>
+                <div class="widget-info">Objectif : 300,000€</div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
