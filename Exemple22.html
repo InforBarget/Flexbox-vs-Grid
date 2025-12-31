@@ -1,0 +1,120 @@
+<!-- ❌ Mauvais : Flexbox pour un layout 2D complexe -->
+<div class="bad-flex-layout">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+</div>
+
+<style>
+    /* ❌ Code compliqué et difficile à maintenir */
+    .bad-flex-layout {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .bad-flex-layout .item {
+        flex: 0 0 calc(33.333% - 20px);
+        margin: 10px;
+    }
+
+    /* ✅ Simple et maintenable */
+    .good-grid-layout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .container {
+        /* Fallback pour navigateurs anciens */
+        display: block;
+
+        /* Grid moderne */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* ❌ Compliqué avec margin */
+    .spacing-container {
+        display: flex;
+    }
+
+    .box {
+        margin: 10px;
+    }
+
+    /* ✅ Plus simple avec gap */
+    .spacing-container {
+        display: flex;
+        gap: 20px;
+    }
+
+    /* ❌ Illisible sur grilles complexes */
+    .complex-areas {
+        display: grid;
+        grid-template-areas:
+            "h h h h h h h h h h h h"
+            "s s m m m m m m m a a a"
+            "s s m m m m m m m a a a"
+            "s s m m m m m m m a a a"
+            "f f f f f f f f f f f f";
+    }
+
+    /* ✅ Plus clair avec lignes/colonnes */
+    .complex-grid {
+        display: grid;
+        grid-template-columns: 2fr 6fr 3fr;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .header {
+        grid-column: 1 / -1;
+    }
+
+    .sidebar {
+        grid-row: 2;
+    }
+
+    .main {
+        grid-row: 2;
+    }
+
+    .aside {
+        grid-row: 2;
+    }
+
+    .footer {
+        grid-column: 1 / -1;
+    }
+
+    /* ✅ Pensez mobile-first */
+    .responsive-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    /* Tablette */
+    @media (min-width: 768px) {
+        .responsive-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* Desktop */
+    @media (min-width: 1024px) {
+        .responsive-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    /* Ou mieux : automatique sans media queries */
+    .auto-responsive-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+</style>
