@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Moderne - Flex + Grid</title>
+</head>
+
+<body>
+    <div class="blog-layout">
+        <!-- Navigation avec Flexbox -->
+        <nav class="blog-nav">
+            <div class="nav-logo">MonBlog</div>
+            <ul class="nav-menu">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Articles</a></li>
+                <li><a href="#">À propos</a></li>
+            </ul>
+            <button class="nav-search">🔍</button>
+        </nav>
+
+        <!-- Contenu principal -->
+        <main class="blog-content">
+            <h1>Derniers Articles</h1>
+
+            <!-- Grille d'articles avec Grid -->
+            <div class="articles-grid">
+                <article class="article-card">
+                    <img src="article1.jpg" alt="Article 1">
+                    <div class="card-content">
+                        <span class="card-category">Technologie</span>
+                        <h2>Les tendances CSS en 2024</h2>
+                        <p>Découvrez les nouvelles fonctionnalités CSS qui révolutionnent le web design...</p>
+                        <div class="card-footer">
+                            <span class="card-date">15 déc. 2024</span>
+                            <span class="card-read-time">5 min</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- 3 autres articles similaires... -->
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
